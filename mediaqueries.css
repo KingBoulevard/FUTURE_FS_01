@@ -19,11 +19,11 @@
   
   #hamburger-nav {
     display: flex;
-    background: #0a0a0a;
+    background: var(--bg-nav);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid #1a1a1a;
+    border-bottom: 1px solid var(--border-subtle);
     padding: 0 1.5rem;
     height: 70px;
     justify-content: space-between;
