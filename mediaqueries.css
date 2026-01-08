@@ -2,11 +2,11 @@
   section {
     padding: 5rem 6rem;
   }
-  
+
   .title {
     font-size: 3.5rem;
   }
-  
+
   .hero-title {
     font-size: 4rem;
   }
@@ -16,7 +16,7 @@
   #desktop-nav {
     display: none;
   }
-  
+
   #hamburger-nav {
     display: flex;
     background: var(--bg-nav);
@@ -29,52 +29,143 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+
+  #hamburger-nav .menu-links {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem 1.5rem 2rem;
+    background: var(--menu-overlay-bg);
+
+    border: none;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    z-index: 1100;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  #hamburger-nav .menu-links::before {
+    content: '';
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    background: var(--menu-overlay-bg);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1099;
+  }
+
+  #hamburger-nav .menu-links.open::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #hamburger-nav .menu-links li {
+    list-style: none;
+    position: relative;
+    z-index: 1101;
+  }
+
+  #hamburger-nav .menu-links li:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 1px;
+    margin: 0.75rem auto 0;
+    background: var(--menu-divider);
+    border-radius: 999px;
+  }
+
+  #hamburger-nav .menu-links a {
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1102;
+  }
+
+  #hamburger-nav .menu-links.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .menu-theme-item {
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1101;
+  }
+
+  .menu-theme-toggle {
+    width: 100%;
+    padding: 0.9rem 0.5rem;
+    border: none;
+    background: transparent;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1102;
+    text-align: center;
+  }
+
   section {
     padding: 4rem 3rem;
   }
-  
+
   .hero-content {
     flex-direction: column;
     text-align: left;
     gap: 3rem;
   }
-  
+
   .hero-text {
     order: 2;
   }
-  
+
   .hero-image {
     order: 1;
     margin-bottom: 2rem;
   }
-  
+
   .section__pic-container {
     width: 320px;
     height: 320px;
   }
-  
+
   .about-content {
     flex-direction: column;
   }
-  
+
   .about-image-container {
     text-align: center;
   }
-  
+
   .about-pic {
     max-width: 280px;
     border-radius: 12px;
   }
-  
+
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
-  
+
   .education-container {
     grid-template-columns: 1fr;
   }
-  
+
   .section-header {
     border-left: 4px solid #00d4ff;
     padding-left: 1.5rem;
@@ -85,31 +176,31 @@
   section {
     padding: 3rem 2rem;
   }
-  
+
   .title {
     font-size: 2.8rem;
   }
-  
+
   .hero-title {
     font-size: 3rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-container {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
-  
+
   .section__text__p1 {
     font-size: 0.75rem;
   }
@@ -120,147 +211,147 @@
     padding: 3rem 1.5rem;
     min-height: auto;
   }
-  
+
   .section-header {
     margin-bottom: 2.5rem;
     padding-left: 1rem;
   }
-  
+
   .section__text__p1 {
     font-size: 0.7rem;
     letter-spacing: 2px;
   }
-  
+
   .title {
     font-size: 2.2rem;
   }
-  
+
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 0.95rem;
   }
-  
+
   .section__pic-container {
     width: 280px;
     height: 280px;
   }
-  
+
   .section__pic-container::before {
     top: 8px;
     left: 8px;
   }
-  
+
   .btn {
     padding: 0.9rem 2rem;
     font-size: 0.85rem;
     width: 100%;
     max-width: 280px;
   }
-  
+
   .btn-container {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .professional-summary {
     padding: 2rem;
   }
-  
+
   .professional-summary h2 {
     font-size: 1.5rem;
   }
-  
+
   .professional-summary p {
     font-size: 1rem;
   }
-  
+
   .location-info {
     padding: 1.5rem;
   }
-  
+
   .about-pic {
     max-width: 250px;
     border-radius: 12px;
   }
-  
+
   .skill-card {
     padding: 1.5rem;
   }
-  
+
   .skill-card h3 {
     font-size: 1.1rem;
   }
-  
+
   .skills-category-title {
     font-size: 2rem;
     padding-left: 1rem;
   }
-  
+
   .project-card {
     margin-bottom: 0;
   }
-  
+
   .project-content {
     padding: 2rem;
   }
-  
+
   .project-title {
     font-size: 1.4rem;
   }
-  
+
   .education-card,
   .certification-card {
     flex-direction: column;
     padding: 2rem;
     text-align: left;
   }
-  
+
   .education-icon,
   .certification-icon {
     margin: 0 auto 1rem 0;
   }
-  
+
   .education-content h2,
   .certification-content h2 {
     font-size: 1.5rem;
   }
-  
+
   .contact-card {
     padding: 1.5rem;
   }
-  
+
   .contact-card h3 {
     font-size: 1.1rem;
   }
-  
+
   footer {
     padding: 2.5rem 1.5rem;
   }
-  
+
   footer .nav-links {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .logo {
     font-size: 1.1rem;
   }
-  
+
   .scroll-indicator {
     display: none;
   }
-  
+
   #profile {
     padding: 4rem 1.5rem;
   }
-  
+
   nav {
     padding: 0 1.5rem;
   }
-  
+
   .nav-links {
     gap: 2rem;
     font-size: 0.85rem;
@@ -271,45 +362,45 @@
   section {
     padding: 2.5rem 1rem;
   }
-  
+
   .title {
     font-size: 1.8rem;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .section__pic-container {
     width: 240px;
     height: 240px;
   }
-  
+
   .skill-tag,
   .tech-tag {
     font-size: 0.75rem;
     padding: 0.5rem 0.9rem;
   }
-  
+
   .btn {
     padding: 0.8rem 1.5rem;
     font-size: 0.8rem;
   }
-  
+
   .professional-summary,
   .location-info {
     padding: 1.5rem;
   }
-  
+
   .project-content {
     padding: 1.5rem;
   }
-  
+
   .education-card,
   .certification-card {
     padding: 1.5rem;
   }
-  
+
   .contact-card {
     padding: 1.3rem;
   }

@@ -26,8 +26,22 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", () => {
   applyStoredTheme();
 
-  const toggle = document.getElementById("theme-toggle");
-  if (toggle) {
+  const toggles = document.querySelectorAll(".theme-toggle-button, .menu-theme-toggle");
+  toggles.forEach((toggle) => {
     toggle.addEventListener("click", toggleTheme);
-  }
+  });
+
+  // Close menu when clicking on the blurred backdrop (left half of screen)
+  document.addEventListener("click", (e) => {
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    if (menu && menu.classList.contains("open")) {
+      // Check if click is on the left half of the screen (backdrop area)
+      const clickX = e.clientX;
+      const screenWidth = window.innerWidth;
+      if (clickX < screenWidth / 2 && !menu.contains(e.target) && !icon.contains(e.target)) {
+        toggleMenu();
+      }
+    }
+  });
 });
